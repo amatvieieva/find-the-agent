@@ -1,0 +1,27 @@
+
+body {
+  font-family: "Montserrat-Bold";
+  font-size: 16px;
+  background-color: var(--mainColorBg);
+  color: var(--mainTextColor);
+  height: 100vh;
+}
+
+:root {
+  --mainTextColor: #232B2F;
+  --textColorSecondary: #767676;
+  --textColorLight: #C4C4C4;
+  --accentColorText: #00D188;
+
+  --mainColorBg: #fff;
+  --accentColorBg: rgba(245, 191, 65, 0.6);
+  --grayBg: rgba(196, 196, 196, 0.6);
+  --accentColorBgSecondary: #00D188;
+  --accentColorBgOpacity: rgba(0, 209, 136, 0.55);
+
+  --borderColor: #C4C4C4;
+  --borderColorDarkGray: #7A8083; 
+  --borderAccent: #00D188;
+
+  --notActiveColor: #999999;
+}

@@ -1,0 +1,9 @@
+.layoutWrapper {
+  display: flex;
+  position: relative;
+}
+
+.main {
+  width: 50%;
+  flex-grow: 1;
+}

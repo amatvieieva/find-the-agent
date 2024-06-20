@@ -1,0 +1,24 @@
+.home__title {
+  font-size: 46px;
+  font-family: "Montserrat-Light";
+  font-weight: 300;
+  text-align: center;
+  max-width: 300px;
+  margin-bottom: 30px;
+}
+
+.home__subtitle--margin {
+  margin-top: 50px;
+  margin-bottom: 30px;
+}
+
+.home__options {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
+}
+
+.home__btn--margin {
+  margin-top: 70px;
+}

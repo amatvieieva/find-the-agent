@@ -1,0 +1,20 @@
+.exitBtn {
+  position: absolute;
+  top: 40px;
+  right: 40px;
+  padding: 8px 20px;
+  background-color: var(--grayBg);
+  color: var(--mainTextColor);
+  font-family: "Montserrat-Medium";
+  font-size: 14px;
+  border-radius: 50px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: transform 250ms linear;
+
+  &:active{
+    transform: scale(1.05);
+    opacity: .7;
+  }
+}

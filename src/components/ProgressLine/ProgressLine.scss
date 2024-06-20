@@ -1,0 +1,59 @@
+.progressLine__wrapper {
+  width: 100%;
+}
+
+.progressLine {
+  width: 100%;
+  height: 8px;
+  border-radius: 4px;
+  background-color: var(--grayBg);
+  &--color {
+    height: 8px;
+    border-radius: 4px;
+    background-color: var(--accentColorBgSecondary);
+  }
+}
+
+.progressLine__info {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 42px;
+  height: 44px;
+}
+
+.progressLine__infoText {
+  font-family: "Montserrat-Regular";
+  color: var(--accentColorText);
+}
+
+.progressLine__btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.progressLine__back {
+  background-color: transparent;
+  color: var(--textColorSecondary);
+}
+
+.progressLine__nextWrapper {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.progressLine__next {
+  padding: 10px 20px;
+  background-color: var(--grayBg);
+  border-radius: 10px;
+  color: var(--notActiveColor);
+}
+
+.progressLine__next--active {
+  background-color: var(--accentColorBgSecondary);
+  color: #fff;
+}

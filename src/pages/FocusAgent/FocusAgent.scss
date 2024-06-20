@@ -1,0 +1,57 @@
+.focusAgent__form {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
+  margin-top: 56px;
+}
+
+.focusAgent__subtitle--margin {
+  margin-top: 83px;
+}
+
+.focusAgent__label {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  font-family: "Montserrat-Regular";
+  font-size: 18px;
+  line-height: 18px;
+  margin-top: 18px;
+  user-select: none;
+  cursor: pointer;
+
+  &::before {
+    content: "";
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    border: 1px solid var(--borderColor);
+    border-radius: 4px;
+    margin-right: 12px;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 18px;
+    height: 10px;
+    border-bottom: 2px solid #000;
+    border-left: 2px solid #000;
+    border-radius: 2px;
+    top: 50%;
+    left: 6px;
+    transform: translate(0%, -50%) rotate(-45deg) translateY(-4px) scale(0);
+    transition-duration: 200ms;
+  }
+}
+
+.focusAgent__input {
+  display: none;
+}
+
+.focusAgent__input:checked + .focusAgent__label::after {
+  transform: translate(0%, -50%) rotate(-45deg) translateY(-4px) scale(1);
+}

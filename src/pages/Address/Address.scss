@@ -1,0 +1,11 @@
+.address__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-grow: 1;
+}
+
+.address__subtitleWrapper {
+  max-width: 570px;
+  margin-bottom: 56px;
+}
