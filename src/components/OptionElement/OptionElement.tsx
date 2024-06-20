@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { Option } from "../../types/option";
 import "./OptionElement.scss";
 
@@ -8,22 +7,21 @@ interface OptionElement {
 }
 
 export default function OptionElement({ option, checked }: OptionElement) {
-  const [isChecked, setIsChecked] = useState(checked);
+    
   return (
     <label
-      className={`optionElement ${isChecked ? 'optionElement--checked' : ''}`}
+      className={`optionElement ${checked ? 'optionElement--checked' : ''}`}
       htmlFor={option.title}
     >
       <input
-        type="checkbox"
+        type="radio"
         id={option.title}
         className="optionElement__input"
-        onChange={() => setIsChecked(!isChecked)}
-        name={option.title}
+        name='radio'
         value={option.title}
-        checked={isChecked}
+        checked={checked}
       />
-      <div className={`optionElement__svgBg ${isChecked ? 'optionElement__svgBg--checked' : ''}`}>{option.svg}</div>
+      <div className={`optionElement__svgBg ${checked ? 'optionElement__svgBg--checked' : ''}`}>{option.svg}</div>
       <p className="optionElement__text">{option.title}</p>
     </label>
   );

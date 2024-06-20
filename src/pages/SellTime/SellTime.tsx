@@ -11,30 +11,28 @@ import { selectTime } from "../../redux/selectors";
 
 export default function SellTime() {
   const dispatch = useDispatch();
-  const selectedTime = useSelector(selectTime)
+  const selectedTime = useSelector(selectTime);
 
-  function chooseTime ( time: TimeType) {
+  function chooseTime(time: TimeType) {
     dispatch(timeRecorder(time));
   }
 
   return (
     <PageWrapper>
-      <div className="sellTime__subtitle--margin">
+      <div className="sellTime__content">
         <Subtitle>How fast are you planning to sell?</Subtitle>
+        <div className="sellTime__options">
+          {optionsArr.map((option, index) => (
+            <OptionElementLink
+              to="/address"
+              key={index}
+              option={option}
+              onClick={() => chooseTime(option.value as TimeType)}
+              isSelected={selectedTime === option.title}
+            ></OptionElementLink>
+          ))}
+        </div>
       </div>
-      <div className="sellTime__options">
-        {optionsArr.map((option, index) => (
-          <OptionElementLink
-            to="/address"
-            key={index}
-            option={option}
-            onClick = {()=>chooseTime(option.value as TimeType)}
-            isSelected = {selectedTime === option.title}
-          ></OptionElementLink>
-        ))}
-      </div>
-
-      <div className="sellTime__progressLine--margin"></div>
       <ProgressLine pageNumber={1}></ProgressLine>
     </PageWrapper>
   );

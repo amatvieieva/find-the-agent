@@ -5,11 +5,11 @@ import { ActionType, Answers, FocusAgentType, PriceType, PropertyType } from "./
 
 const initialState: Answers = {
   action: ActionType.Sell,
-  propertyTypes: [] as PropertyType[],
+  propertyTypes: '' as PropertyType,
   selectedTime: null,
   location: '',
-  price: [] as PriceType[],
-  focusAgent: [] as FocusAgentType[],
+  price: '' as PriceType,
+  focusAgent: '' as FocusAgentType,
 };
 
 const answersSlice = createSlice({
@@ -19,7 +19,7 @@ const answersSlice = createSlice({
     actionRecorder(state, { payload }) {
       state.action = payload;
     },
-    typesRecorder(state, {payload}) {
+    typesRecorder(state, {payload}) {     
       state.propertyTypes = payload;
     },
     timeRecorder (state, {payload}) {

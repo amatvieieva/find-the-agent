@@ -16,10 +16,10 @@ export default function Home() {
 
   function formPropertyTypes (e: React.ChangeEvent<HTMLFormElement>) {
     const formData = new FormData(e.currentTarget);
-    const data = Object.assign(Object.fromEntries(formData))
-    dispatch(typesRecorder(Object.keys(data)))
+    const data = Object.values(Object.fromEntries(formData));        
+    dispatch(typesRecorder(String(data)))
   }
-
+  
   return (
     <PageWrapper>
       <h2 className="home__title">My property is for</h2>
@@ -29,11 +29,11 @@ export default function Home() {
       </div>
       <form className="home__options" onChange={(e: React.ChangeEvent<HTMLFormElement>)=>formPropertyTypes(e)}>
         {optionsArr.map((option, index) => (
-          <OptionElement key={index} checked = {propertyTypes.includes(option.title as PropertyType)} option={option}></OptionElement>
+          <OptionElement key={index} checked = {propertyTypes === option.title as PropertyType} option={option}></OptionElement>
         ))}
       </form>
       <div className="home__btn--margin">
-        <NavigateButton to="/sellSpeed" isDisabled={propertyTypes.length === 0}>Let’s Continue</NavigateButton>
+        <NavigateButton to="/sellSpeed" isDisabled={propertyTypes.trim() === ''}>Let’s Continue</NavigateButton>
       </div>
     </PageWrapper>
   );

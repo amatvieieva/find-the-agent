@@ -10,15 +10,19 @@ export default function Address() {
   return (
     <PageWrapper>
       <div className="address__content">
-        <div className="address__subtitleWrapper">
-          <Subtitle>
-            What is the address of the property you want to sell, please.
-          </Subtitle>
-        </div>
-        <OptionElementSelect setIsValueEntered={setIsValueEntered}></OptionElementSelect>
+        <Subtitle>
+          What is the address of the property you want to sell, please.
+        </Subtitle>
+        <OptionElementSelect
+          setIsValueEntered={setIsValueEntered}
+        ></OptionElementSelect>
       </div>
-      <div style={{flexGrow: '1'}}></div>
-      <ProgressLine pageNumber={2} btnDisabled={isValueEntered} nextPage='/price'></ProgressLine>
+
+      <ProgressLine
+        pageNumber={2}
+        btnDisabled={isValueEntered}
+        nextPage="/price"
+      ></ProgressLine>
     </PageWrapper>
   );
 }

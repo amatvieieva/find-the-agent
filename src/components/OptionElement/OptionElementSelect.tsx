@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import "./OptionElement.scss";
 import { Loader } from "@googlemaps/js-api-loader";
 import { useDispatch, useSelector } from "react-redux";
@@ -6,7 +6,7 @@ import { locationRecorder } from "../../redux/answers";
 import { selectLocation } from "../../redux/selectors";
 import { Location, LocationPinBig } from "../../assets/icons/IconsComponent";
 
-const API_KEY = "AIzaSyA5BOBPjZte9PkYBpRArVffSu3qmQB7wjM";
+const API_KEY = import.meta.env.VITE_API_KEY;
 type SuggestionType = google.maps.places.AutocompletePrediction[];
 interface OptionElementSelectProps {
   setIsValueEntered: (isValue: boolean) => void;
@@ -21,13 +21,21 @@ export default function OptionElementSelect({
   const [suggestions, setSuggestions] = useState<SuggestionType>([]);
   const [isLoading, setIsLoading] = useState(false);
   const dispatch = useDispatch();
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
+    debounce(fetchPlacePredictions, 1000);
+    setIsValueEntered(inputValue.trim() !== "")
+  }, [inputValue]);
+
+  function fetchPlacePredictions () {   
+    console.log(API_KEY);
+    
     const loader = new Loader({
       apiKey: API_KEY,
       libraries: ["places"],
     });
-
+  
     loader.load().then(() => {
       const delayDebounceFn = setTimeout(() => {
         if (inputValue) {
@@ -49,18 +57,17 @@ export default function OptionElementSelect({
           setIsLoading(false);
         }
       }, 1000);
-
+  
       return () => clearTimeout(delayDebounceFn);
     });
-  }, [inputValue]);
+  }
 
-  useEffect(() => {
-    if (inputValue.trim() !== "") {
-      setIsValueEntered(true);
-    } else {
-      setIsValueEntered(false);
+  function debounce (callback: ()=>void, delay:number) {
+    if (timeoutRef.current) {
+     clearTimeout(timeoutRef.current);
     }
-  }, [inputValue]);
+    timeoutRef.current = setTimeout(() => callback(), delay); 
+ }
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setInputValue(event.target.value);
