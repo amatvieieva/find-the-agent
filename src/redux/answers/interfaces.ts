@@ -19,6 +19,13 @@ export enum PriceType {
   M1P2OrMore = "€ 1.2 M or more",
 }
 
+export enum PropertyType {
+  Apartment = "Apartment",
+  House = "House",
+  Bungalow = "Bungalow",
+  LandToBuild = "Land to build",
+}
+
 export enum FocusAgentType {
   FamilyHomesSpecialist = "Family Homes Specialist",
   InvestmentSpecialist = "Investment Specialist",
@@ -32,7 +39,7 @@ export enum FocusAgentType {
 
 export interface Answers {
   action: ActionType;
-  propertyTypes: string[];
+  propertyTypes: PropertyType[];
   selectedTime: TimeType | null;
   location: string;
   price: PriceType[];

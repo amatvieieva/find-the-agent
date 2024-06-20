@@ -1,11 +1,6 @@
 import { Option } from "../../types/option";
-import IconAmount1 from "../../assets/icons/IconAmount1.svg?react";
-import IconAmount2 from "../../assets/icons/IconAmount2.svg?react";
-import IconAmount3 from "../../assets/icons/IconAmount3.svg?react";
-import IconAmount4 from "../../assets/icons/IconAmount4.svg?react";
-import IconAmount5 from "../../assets/icons/Group.svg?react";
-import IconAmount6 from "../../assets/icons/Group 5.svg?react";
 import { PriceType } from "../../redux/answers/interfaces";
+import { Group, Group5, IconAmount1, IconAmount2, IconAmount3, IconAmount4 } from "../../assets/icons/IconsComponent";
 
 export const optionsArr: Option[] = [
   {
@@ -30,12 +25,12 @@ export const optionsArr: Option[] = [
   },
   {
     title: "€ 901K – € 1.2 M",
-    svg: <IconAmount5 />,
+    svg: <Group />,
     value: PriceType.K901to1M2,
   },
   {
     title: "€ 1.2 M or more",
-    svg: <IconAmount6 />,
+    svg: <Group5 />,
     value: PriceType.M1P2OrMore,
   },
 ];

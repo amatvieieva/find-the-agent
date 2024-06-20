@@ -8,6 +8,7 @@ import "./Home.scss";
 import { optionsArr } from "./optionsArr";
 import { typesRecorder } from "../../redux/answers";
 import { selectTypes } from "../../redux/selectors";
+import { PropertyType } from "../../redux/answers/interfaces";
 
 export default function Home() {
   const propertyTypes = useSelector(selectTypes);
@@ -28,7 +29,7 @@ export default function Home() {
       </div>
       <form className="home__options" onChange={(e: React.ChangeEvent<HTMLFormElement>)=>formPropertyTypes(e)}>
         {optionsArr.map((option, index) => (
-          <OptionElement key={index} checked = {propertyTypes.includes(option.title)} option={option}></OptionElement>
+          <OptionElement key={index} checked = {propertyTypes.includes(option.title as PropertyType)} option={option}></OptionElement>
         ))}
       </form>
       <div className="home__btn--margin">

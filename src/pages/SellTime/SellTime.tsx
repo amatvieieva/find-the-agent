@@ -28,7 +28,7 @@ export default function SellTime() {
             to="/address"
             key={index}
             option={option}
-            onClick = {()=>chooseTime(option.value)}
+            onClick = {()=>chooseTime(option.value as TimeType)}
             isSelected = {selectedTime === option.title}
           ></OptionElementLink>
         ))}

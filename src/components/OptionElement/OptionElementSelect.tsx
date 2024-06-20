@@ -1,14 +1,13 @@
 import { useEffect, useState } from "react";
-import Location from "../../assets/icons/icon location pin.svg?react";
-import LocationBig from "../../assets/icons/icon location pinBig.svg?react";
 import "./OptionElement.scss";
 import { Loader } from "@googlemaps/js-api-loader";
 import { useDispatch, useSelector } from "react-redux";
 import { locationRecorder } from "../../redux/answers";
 import { selectLocation } from "../../redux/selectors";
+import { Location, LocationPinBig } from "../../assets/icons/IconsComponent";
 
 const API_KEY = "AIzaSyA5BOBPjZte9PkYBpRArVffSu3qmQB7wjM";
-
+type SuggestionType = google.maps.places.AutocompletePrediction[];
 interface OptionElementSelectProps {
   setIsValueEntered: (isValue: boolean) => void;
 }
@@ -19,7 +18,7 @@ export default function OptionElementSelect({
   const location = useSelector(selectLocation);
   const [isShowOptions, setIsShowOptions] = useState(false);
   const [inputValue, setInputValue] = useState(location);
-  const [suggestions, setSuggestions] = useState([]);
+  const [suggestions, setSuggestions] = useState<SuggestionType>([]);
   const [isLoading, setIsLoading] = useState(false);
   const dispatch = useDispatch();
 
@@ -36,7 +35,7 @@ export default function OptionElementSelect({
           service.getPlacePredictions(
             { input: inputValue },
             (predictions, status) => {
-              if (status === window.google.maps.places.PlacesServiceStatus.OK) {
+              if (status === window.google.maps.places.PlacesServiceStatus.OK && predictions) {
                 setSuggestions(predictions.slice(0, 5));
                 setIsLoading(false);
               } else {
@@ -63,12 +62,12 @@ export default function OptionElementSelect({
     }
   }, [inputValue]);
 
-  const handleInputChange = (event) => {
+  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setInputValue(event.target.value);
     setIsLoading(true);
   };
 
-  function selectedItem(text) {
+  function selectedItem(text: string) {
     setInputValue(text);
     dispatch(locationRecorder(text))
     setIsShowOptions(false);
@@ -83,7 +82,9 @@ export default function OptionElementSelect({
         onChange={handleInputChange}
         value={inputValue}
       />
-      <LocationBig className="optionElementSelect__icon" />
+      <div className="optionElementSelect__icon">
+        <LocationPinBig />
+      </div>
 
       {isShowOptions && (
         <ul className="optionElementSelect__option">

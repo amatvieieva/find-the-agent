@@ -4,7 +4,7 @@ import Subtitle from "../../components/Subtitle/Subtitle";
 import { selectAnswers } from "../../redux/selectors";
 import "./Result.scss";
 import ProgressLine from "../../components/ProgressLine/ProgressLine";
-import { propertyName } from "../../utils/propertyName";
+import { PropertyNames, propertyName } from "../../utils/propertyName";
 
 export default function Result() {
   const answers = useSelector(selectAnswers);
@@ -16,7 +16,7 @@ export default function Result() {
       <ul className="result__list">
         {answersArr.map(([name, value], index) => (
           <li key={index} className="result__item">
-            <span className="result__propertyName">{propertyName(name)}: </span>
+            <span className="result__propertyName">{propertyName(name as PropertyNames)}: </span>
             {Array.isArray(value) ? value.join(", ") : String(value)}
           </li>
         ))}

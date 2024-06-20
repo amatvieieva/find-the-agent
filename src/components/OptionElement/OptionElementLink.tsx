@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { Option } from "../../types/option";
-import LinkBtn from "../../assets/icons/link button.svg?react";
 import "./OptionElement.scss";
+import { ButtonRight } from "../../assets/icons/IconsComponent";
 
 interface OptionElementLinkProp {
   to: string;
@@ -20,7 +20,7 @@ export default function OptionElementLink({
     <Link to={to} className={`optionElement ${isSelected ? 'optionElement--checked' : ''}`} onClick ={onClick}>
       <div className="optionElement__svgBg">{option.svg}</div>
       <p className="optionElement__text">{option.title}</p>
-      <LinkBtn />
+      <ButtonRight />
     </Link>
   );
 }

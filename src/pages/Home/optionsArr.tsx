@@ -1,24 +1,26 @@
 import { Option } from "../../types/option";
-import IconApartment from "../../assets/icons/apartment.svg?react";
-import IconHouse from "../../assets/icons/Icon-house.svg?react";
-import IconBungalow from "../../assets/icons/bungalow.svg?react";
-import IconLandtobuild from "../../assets/icons/landtobuild.svg?react";
+import { Apartment, Bungalow, IconHouse, Landtobuild } from "../../assets/icons/IconsComponent";
+import { PropertyType } from "../../redux/answers/interfaces";
 
 export const optionsArr: Option[] = [
   {
-    title: "Apartment",
-    svg: <IconApartment />,
+    title: PropertyType.Apartment,
+    svg: <Apartment />,
+    value: PropertyType.Apartment,
   },
   {
-    title: "House",
+    title: PropertyType.House,
     svg: <IconHouse />,
+    value: PropertyType.House,
   },
   {
-    title: "Bungalow",
-    svg: <IconBungalow />,
+    title: PropertyType.Bungalow,
+    svg: <Bungalow />,
+    value: PropertyType.Bungalow,
   },
   {
-    title: "Land to build",
-    svg: <IconLandtobuild />,
+    title: PropertyType.LandToBuild,
+    svg: <Landtobuild />,
+    value: PropertyType.LandToBuild,
   },
 ];

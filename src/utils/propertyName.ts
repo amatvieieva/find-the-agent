@@ -1,4 +1,4 @@
-type PropertyNames =
+export type PropertyNames =
   | "action"
   | "propertyTypes"
   | "selectedTime"
