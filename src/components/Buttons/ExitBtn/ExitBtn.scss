@@ -1,12 +1,12 @@
 .exitBtn {
   position: absolute;
-  top: 40px;
-  right: 40px;
-  padding: 8px 20px;
+  top: clamp(6px, 2vw, 40px);
+  right: clamp(10px, 2.7vw, 40px);
+  padding: clamp(6px, 0.5vw, 8px) clamp(12px, 1.5vw, 20px);
   background-color: var(--grayBg);
   color: var(--mainTextColor);
   font-family: "Montserrat-Medium";
-  font-size: 14px;
+  font-size: clamp(10px, 0.9vw, 14px);
   border-radius: 50px;
   border: none;
   outline: none;

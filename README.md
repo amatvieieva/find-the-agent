@@ -1,30 +1,32 @@
-# React + TypeScript + Vite
+# Project "Interactive Survey" 📋🔍
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+View the project: ([https://interactive-survey.com](https://find-the-agent.vercel.app/))
 
-Currently, two official plugins are available:
+## Used Technologies ⚙️:
+- React.js
+- TypeScript
+- Scss
+- Redux Toolkit
+- Redux Persist
+- Google Places API
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## About the Project 💻
+The 'Interactive Survey' project is a dynamic multi-step survey that allows users to answer questions in a sequential format. It includes location search functionality powered by the Google Places API and ensures a smooth and responsive user experience.
 
-## Expanding the ESLint configuration
+## Functionality:
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- **Survey Navigation**:
+    - Created a multi-step survey where each page follows the previous one, with the ability to navigate back to the previous page.
+    - Each page allows selection of only one option, except the first page which includes a clickable switch.
+  
+- **Location Search**:
+    - Implemented Google Places API on the "Step 2" page for location search functionality.
+    - Displayed the first 5 results in a dropdown list.
+    - Introduced a 1-second delay before sending the request to the API after the user stops typing to optimize performance and reduce unnecessary API calls.
 
-- Configure the top-level `parserOptions` property like this:
+- **Button State Management**:
+    - The "Next" button is disabled and gray if no option is chosen, ensuring that users make a selection before proceeding.
+    - Once an option is selected, the "Next" button becomes green and clickable, enhancing the user interaction experience.
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+- **Progress Bar**:
+    - Added a dynamic progress bar that fills based on user progress through the survey steps

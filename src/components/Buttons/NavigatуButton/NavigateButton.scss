@@ -1,9 +1,9 @@
 .navigateButton {
   display: block;
-  padding: 14px 26px;
+  padding: clamp(10px, 1vw, 14px) clamp(12px, 1.8vw, 26px);
   border: 1px solid var(--borderAccent);
   border-radius: 50px;
-  font-size: 18px;
+  font-size:  clamp(10px, 1.25vw, 18px);
   color: var(--accentColorText);
   user-select: none;
   cursor: pointer;

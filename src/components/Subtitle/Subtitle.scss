@@ -1,5 +1,5 @@
 .subtitle {
-  font-size: 24px;
+  font-size: clamp(16px, 1.6vw, 24px);
   font-family: "Montserrat-Medium";
   max-width: 560px;
 }

@@ -7,8 +7,8 @@ export default function Header() {
   return (
     <div className="header">
       <Link to="/" className="header__logoLink">
-        <img src={logo} alt="" />
-        <h1>ProprHome</h1>
+        <img src={logo} alt="Logo" className="header__logo" />
+        <h1 className="header__title">ProprHome</h1>
       </Link>
       <div className="header__content">
         <p className="header__slogan">Find the best agent to sell your property</p>

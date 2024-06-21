@@ -1,9 +1,17 @@
 .layoutWrapper {
   display: flex;
   position: relative;
+
+  @media (width < 670px) {
+    flex-direction: column;
+  }
 }
 
 .main {
   width: 50%;
   flex-grow: 1;
+
+  @media (width < 670px) {
+    width: 100%;
+  }
 }

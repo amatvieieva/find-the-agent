@@ -112,7 +112,8 @@ export default function OptionElementSelect({
                 key={index}
                 onClick={() => selectedItem(item.description)}
               >
-                <Location />
+                <div><Location /></div>
+               
                 <span className="optionElementSelect__city">
                   {item.structured_formatting.main_text}
                 </span>

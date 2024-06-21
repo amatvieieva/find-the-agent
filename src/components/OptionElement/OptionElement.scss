@@ -3,7 +3,7 @@
   align-items: center;
   gap: 18px;
   border: 1px solid var(--borderColor);
-  padding: 17px 12px;
+  padding: clamp(6px, 1.2vw, 17px) clamp(10px, 1vw, 12px);
   border-radius: 10px;
   width: 100%;
   cursor: pointer;
@@ -19,20 +19,21 @@
 }
 
 .optionElement__text {
-  line-height: 23px;
+  line-height: clamp(10px, 1.5vw, 23px);
   letter-spacing: 0.05em;
   flex-grow: 1;
 }
 
 .optionElement__svgBg {
-  width: 50px;
-  height: 50px;
-  min-width: 50px;
+  width: clamp(30px, 3.5vw, 50px);
+  height: clamp(30px, 3.5vw, 50px);
+  min-width: clamp(20px, 3.5vw, 50px);
   background-color: var(--grayBg);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 6px;
 
   &--checked {
     background-color: var(--accentColorBgOpacity);
@@ -47,7 +48,7 @@
   display: flex;
   align-items: center;
   gap: 20px;
-  padding: 30px;
+  padding: clamp(10px, 2vw, 30px);
   padding-left: 60px;
   width: 100%;
   font-family: "Montserrat-Regular";
@@ -74,7 +75,7 @@
   display: flex;
   align-items: center;
   border: 1px solid var(--borderColor);
-  padding: 4px 17px;
+  padding: 4px clamp(8px, 1vw, 17px);
   border-bottom: none;
   cursor: pointer;
 
