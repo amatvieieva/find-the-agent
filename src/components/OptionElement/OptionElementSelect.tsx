@@ -29,9 +29,7 @@ export default function OptionElementSelect({
     setIsValueEntered(inputValue.trim() !== "")
   }, [inputValue]);
 
-  function fetchPlacePredictions () {   
-    console.log(API_KEY);
-    
+  function fetchPlacePredictions () {       
     const loader = new Loader({
       apiKey: API_KEY,
       libraries: ["places"],

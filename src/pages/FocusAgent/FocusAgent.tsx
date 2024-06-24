@@ -11,7 +11,7 @@ import "./FocusAgent.scss";
 
 export default function FocusAgent() {
   const [isUserChecked, setIsUserChecked] = useState(false);
-  const focusAgent: string = useSelector(selectFocusAgent);
+  const focusAgent: string | null = useSelector(selectFocusAgent);
   const dispatch = useDispatch();
 
   function chooseFocusAgent(e: React.ChangeEvent<HTMLFormElement>) {
@@ -48,7 +48,7 @@ export default function FocusAgent() {
       <ProgressLine
         pageNumber={4}
         nextPage="/result"
-        btnDisabled={isUserChecked && focusAgent.trim() !== ''}
+        btnDisabled={isUserChecked && !!focusAgent}
       ></ProgressLine>
     </PageWrapper>
   );

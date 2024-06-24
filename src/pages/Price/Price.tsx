@@ -13,6 +13,9 @@ export default function Price() {
   const prices = useSelector(selectPrice);
   const dispatch = useDispatch();
 
+  console.log(prices);
+  console.log(!!prices);
+  
   function choosePrice(e: React.ChangeEvent<HTMLFormElement>) {
     const formData = new FormData(e.currentTarget);
     const data = Object.values(Object.fromEntries(formData));
@@ -42,7 +45,7 @@ export default function Price() {
 
       <ProgressLine
         pageNumber={3}
-        btnDisabled={prices.trim() !== ''}
+        btnDisabled={!!prices}
         nextPage="/focusAgent"
       ></ProgressLine>
     </PageWrapper>

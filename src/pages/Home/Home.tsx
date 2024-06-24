@@ -33,7 +33,7 @@ export default function Home() {
         ))}
       </form>
       <div className="home__btn--margin">
-        <NavigateButton to="/sellSpeed" isDisabled={propertyTypes.trim() === ''}>Let’s Continue</NavigateButton>
+        <NavigateButton to="/sellSpeed" isDisabled={!propertyTypes}>Let’s Continue</NavigateButton>
       </div>
     </PageWrapper>
   );

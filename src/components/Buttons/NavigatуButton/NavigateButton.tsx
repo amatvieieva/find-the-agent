@@ -11,15 +11,12 @@ export default function NavigateButton({
   to,
   isDisabled,
 }: NavigateButtonProps) {
+  if (isDisabled) {
+    return <div className="navigateButton isDisabled">{children}</div>;
+  }
   return (
-    <>
-      {isDisabled ? (
-        <div className="navigateButton isDisabled">{children}</div>
-      ) : (
-        <Link className="navigateButton" to={to}>
-          {children}
-        </Link>
-      )}
-    </>
+    <Link className="navigateButton" to={to}>
+      {children}
+    </Link>
   );
 }

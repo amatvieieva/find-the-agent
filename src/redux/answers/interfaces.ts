@@ -39,9 +39,9 @@ export enum FocusAgentType {
 
 export interface Answers {
   action: ActionType;
-  propertyTypes: PropertyType;
+  propertyTypes: PropertyType | null;
   selectedTime: TimeType | null;
   location: string;
-  price: PriceType;
-  focusAgent: FocusAgentType;
+  price: PriceType | null;
+  focusAgent: FocusAgentType | null;
 }

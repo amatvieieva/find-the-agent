@@ -1,15 +1,15 @@
 import { createSlice } from "@reduxjs/toolkit";
 import persistReducer from "redux-persist/lib/persistReducer";
 import storage from "redux-persist/lib/storage";
-import { ActionType, Answers, FocusAgentType, PriceType, PropertyType } from "./interfaces";
+import { ActionType, Answers } from "./interfaces";
 
 const initialState: Answers = {
   action: ActionType.Sell,
-  propertyTypes: '' as PropertyType,
+  propertyTypes: null,
   selectedTime: null,
   location: '',
-  price: '' as PriceType,
-  focusAgent: '' as FocusAgentType,
+  price: null,
+  focusAgent: null,
 };
 
 const answersSlice = createSlice({
