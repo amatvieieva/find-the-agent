@@ -1,5 +1,8 @@
 import { Option } from "../../types/option";
-import { Apartment, Bungalow, IconHouse, Landtobuild } from "../../assets/icons/IconsComponent";
+import Apartment from '../../assets/icons/Apartment.svg?react';
+import House from '../../assets/icons/House.svg?react';
+import Bungalow from '../../assets/icons/bungalow.svg?react';
+import LandToBuild from '../../assets/icons/LandToBuild.svg?react';
 import { PropertyType } from "../../redux/answers/interfaces";
 
 export const optionsArr: Option[] = [
@@ -10,7 +13,7 @@ export const optionsArr: Option[] = [
   },
   {
     title: PropertyType.House,
-    svg: <IconHouse />,
+    svg: <House />,
     value: PropertyType.House,
   },
   {
@@ -20,7 +23,7 @@ export const optionsArr: Option[] = [
   },
   {
     title: PropertyType.LandToBuild,
-    svg: <Landtobuild />,
+    svg: <LandToBuild />,
     value: PropertyType.LandToBuild,
   },
 ];

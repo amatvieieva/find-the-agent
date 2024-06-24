@@ -1,6 +1,7 @@
 import { Link, useNavigate } from "react-router-dom";
 import "./ProgressLine.scss";
-import { ButtonLeft, ButtonRight } from "../../assets/icons/IconsComponent";
+import  ButtonLeft from "../../assets/icons/ButtonLeft.svg?react";
+import   ButtonRight from "../../assets/icons/ButtonRight.svg?react";
 
 interface ProgressLineProps {
   pageNumber: number;
@@ -41,7 +42,7 @@ export default function ProgressLine({
                   {pageNumber === 4 ? (
                     "Show matching agents"
                   ) : (
-                    <span>
+                    <span className="next__btn">
                       Next <ButtonRight />
                     </span>
                   )}
@@ -54,7 +55,7 @@ export default function ProgressLine({
                   {pageNumber === 4 ? (
                     "Show matching agents"
                   ) : (
-                    <span>
+                    <span className="next__btn">
                       Next <ButtonRight />
                     </span>
                   )}

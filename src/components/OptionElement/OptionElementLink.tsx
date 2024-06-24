@@ -1,8 +1,7 @@
 import { Link } from "react-router-dom";
 import { Option } from "../../types/option";
 import "./OptionElement.scss";
-import { ButtonRight } from "../../assets/icons/IconsComponent";
-
+import   ButtonRight from "../../assets/icons/ButtonRight.svg?react";
 interface OptionElementLinkProp {
   to: string;
   option: Option;

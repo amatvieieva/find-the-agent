@@ -4,7 +4,8 @@ import { Loader } from "@googlemaps/js-api-loader";
 import { useDispatch, useSelector } from "react-redux";
 import { locationRecorder } from "../../redux/answers";
 import { selectLocation } from "../../redux/selectors";
-import { Location, LocationPinBig } from "../../assets/icons/IconsComponent";
+import Location from '../../assets/icons/Location.svg?react';
+import LocationBig from '../../assets/icons/LocationBig.svg?react';
 
 const API_KEY = import.meta.env.VITE_API_KEY;
 type SuggestionType = google.maps.places.AutocompletePrediction[];
@@ -21,7 +22,7 @@ export default function OptionElementSelect({
   const [suggestions, setSuggestions] = useState<SuggestionType>([]);
   const [isLoading, setIsLoading] = useState(false);
   const dispatch = useDispatch();
-  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
     debounce(fetchPlacePredictions, 1000);
@@ -90,7 +91,7 @@ export default function OptionElementSelect({
         value={inputValue}
       />
       <div className="optionElementSelect__icon">
-        <LocationPinBig />
+        <LocationBig />
       </div>
 
       {isShowOptions && (
